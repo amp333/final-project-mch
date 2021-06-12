@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <title>Cryptotalk</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <h1>Cryptotalk</h1>
+                <h2>Where thoughts and ideas are shared on blockchain technology, cryptocurrency and investing.</h2>
+            </div>
+        </header>
+        <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+        <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+
+        <nav id="navbar">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Share investing ideas</a></li>
+                    <li><a href="#">Veiw trending ideas</a></li>
+                    <li><a href="#">Generate new strategies</a></li>
+                    <li><a href="#">Have an idea post it</a></li>
+                    <li><a href="#">Like a comment, like it</a></li>
+                </ul>
+                <form>
+                    <label>
+                        Search<input type="search">
+                    </label>
+                </form>
+            </div>
+        </nav>
+
+        
+        <div id='wrap'>
+            <h1>About Cryptotalk: Our goal is simply to bring as many minds together to dialog 
+                and share their ideas of a brighter financial future for all.
+            </h1> 
+            {% if messages %}
+                <div id='errors'>
+                    {% for message in messages %}
+                        <p>- {{message}} -</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <div class='form-box'>
+                <h1>Create Account:</h1>
+                <form action="/register" method=POST>
+                    {% csrf_token %}
+                    First Name: <input type="text" name='fname'>
+                    Last Name: <input type="text" name='lname'>
+                    Email: <input type="text" name='email'>
+                    Password: <input type="password" name='Password'>
+                    Confirm Password: <input type="password" name='confPassword'>
+                    <input type="submit" value='Create User'>
+                </form>
+            </div>
+
+            <div class='form-box'>
+                <h1>Sign In:</h1>
+                <form action="/login" method=POST>
+                    {% csrf_token %}
+                    Email: <input type="text" name='email'>
+                    Password: <input type="password" name='Password'>
+                    <input type="submit" value='Login'>
+                </form>
+            </div>
+
+            <script src="https://widgets.coingecko.com/coingecko-coin-compare-chart-widget.js"></script>
+            <coingecko-coin-compare-chart-widget  coin-ids="bitcoin,ethereum,litecoin,ripple,dogecoin,cardano,stellar,binancecoin,polkadot,uniswap" currency="usd" locale="en" type="market_cap"></coingecko-coin-compare-chart-widget>
+        
+            <script src="https://widgets.coingecko.com/coingecko-beam-widget.js"></script>
+            <coingecko-beam-widget  type="all" height="300" locale="en" width="0"></coingecko-beam-widget>
+            
+        </div> 
+
+    </body>
+
+</html>

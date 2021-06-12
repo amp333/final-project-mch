@@ -1,0 +1,135 @@
+body {
+    background-image: url(images/blue_sky.jpg);
+    color: rgb(37, 51, 179);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
+    line-height: 20px;
+    margin: auto;
+}
+
+.main, .container {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    background-color: rgb(80, 120, 120);
+    color: #fff;
+}
+
+#navbar {
+    background-color: #333;
+    color: #fff;
+}
+
+#navbar ul {
+    padding: 0%;
+    list-style: none;
+    display: flex; 
+}
+
+#navbar a {
+    color: #fff;
+    font-size: 22px;
+    padding-right: 14px;
+}
+#navbar a:hover{
+    color:rgb(0, 225, 255);
+    font-size: 30px;
+}
+
+#navbar {
+    color: rgb(0, 225, 255);
+}
+
+
+.intro h1 {
+    font-size: 55px;
+    line-height: 70px;
+    padding-top: 40px;
+    text-transform: uppercase;
+}
+
+.intro h2 {
+    font-size: 45px;
+    line-height: 70px;
+    padding-top: 40px;
+    text-transform: uppercase;
+}
+
+.intro p{
+    font-size: 20px;
+    margin: bottom 40px; 
+}
+
+button {
+    background-color: aqua;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+
+#wrap{
+    margin: 0px auto;
+    background-color: rgb(140, 160, 240);
+    width: 900px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+}
+
+.form-box{
+    display: inline-block;
+    background-color: rgb(144, 195, 240);
+    width: 400px;
+    min-height: 500px;
+    padding: 20px;
+    vertical-align: top;
+    margin: 10px;
+}
+
+    .form-box form{
+        margin: 25px;
+    }
+    
+    .form-box input{
+        display: block;
+        margin: 10px;
+    }
+
+#errors {
+    text-align: center;
+    color: rgb(200, 0, 0);
+    background-color: rgb(255, 238, 0);
+    padding: 20px;
+    height: 120px;
+}
+
+#posts {
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    margin: 25px;
+}
+
+.one_post {
+    background-color: rgb(177, 241, 241);
+    padding: 25px;
+    margin: 25px;
+    min-height: 100px;
+}
+
+.post{
+    font-size: 16pt;
+    text-align: center;
+}
+
+.poster {
+    font-size: 11pt;
+    text-align: center;
+}
+
+#write{
+    text-align: center;
+}

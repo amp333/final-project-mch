@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <title>Profile Page</title>
+</head>
+<body>
+    <h1>Hello {{user.first_name}} {{user.last_name}}</h1>
+
+    <!-- all posts and comments -->
+    {% for post in user.user_messages.all %}
+    <p>{{post.message}}</p>
+    {% endfor %}
+
+    {% for comment in user.user_comments.all %}
+    <p>{{comment.comment}}</p>
+    {% endfor %}
+    
+    <!-- total # of posts -->
+    {% for post in user.user_messages.all %}  
+    <p>{{post.total}}</p>
+    {% endfor %}
+    <!-- total # of comments -->
+    {% for comment in user.user_comments.all %}
+    <p>{{comment.total}}</p>
+    {% endfor %}
+
+    Edit User Form:
+    <form action="/edit/{{user.id}}" method=POST>
+        {% csrf_token %}
+       First Name: <input type="text" name='fname' value={{user.first_name}}>
+       Last Name: <input type="text" name='lname' value={{user.last_name}}>
+       Email: <input type="text" name='email' value={{user.email}}>
+       <input type="submit">
+    </form>
+</body>
+</html>
